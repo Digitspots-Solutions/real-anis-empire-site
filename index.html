@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real_Anis Empire – Where Style Meets Innovation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Raleway:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-primary: #070606;
+            --color-accent: #c9a258;
+            --color-bg: #FFFFFF;
+            --color-text: #0A0A0A;
+            --color-surface: #f8f8f8;
+            --color-secondary-accent: #8a8a8a;
+            --font-display: 'Cormorant Garamond', serif;
+            --font-body: 'Raleway', sans-serif;
+            --border-radius: 0px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            background-color: var(--color-bg);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-display);
+            font-weight: 400;
+            line-height: 1.2;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(7, 6, 6, 0.1);
+        }
+
+        nav .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
+        nav .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        nav .nav-links a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 0.95rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+        }
+
+        nav .nav-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 4px;
+        }
+
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 2px;
+            background: var(--color-text);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-btn.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .mobile-menu-btn.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-btn.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            right: -100%;
+            width: 300px;
+            height: calc(100vh - 70px);
+            background: var(--color-bg);
+            box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+            transition: right 0.3s ease;
+            z-index: 999;
+            padding: 2rem;
+        }
+
+        .mobile-menu.active {
+            right: 0;
+        }
+
+        .mobile-menu ul {
+            list-style: none;
+        }
+
+        .mobile-menu ul li {
+            margin-bottom: 1.5rem;
+        }
+
+        .mobile-menu ul a {
+            text-decoration: none;
+            color: var(--color-text);
+            font-size: 1.1rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 0.5rem 0;
+        }
+
+        .mobile-menu ul a:hover {
+            color: var(--color-accent);
+        }
+
+        #hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            animation: fadeUp 0.6s ease forwards;
+        }
+
+        #hero .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        #hero .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
+        }
+
+        #hero .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            color: #FFFFFF;
+        }
+
+        #hero h1 {
+            font-size: 4.5rem;
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
+        #hero .tagline {
+            font-size: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 2rem;
+            color: var(--color-accent);
+        }
+
+        #hero p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        #hero .cta-button {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: var(--color-accent);
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid var(--color-accent);
+        }
+
+        #hero .cta-button:hover {
+            background: transparent;
+            color: var(--color-accent);
+        }
+
+        section {
+            padding: 80px 2rem;
+        }
+
+        #about {
+            background: var(--color-surface);
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.1s;
+        }
+
+        .section-container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .about-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+        }
+
+        .about-content h2 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .about-content p {
+            font-size: 1.05rem;
+            line-height: 1.9;
+            font-weight: 300;
+        }
+
+        #services {
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        #services h2 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--color-surface);
+            padding: 2.5rem 2rem;
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--color-primary);
+            letter-spacing: 0.03em;
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            color: var(--color-secondary-accent);
+        }
+
+        #contact {
+            background: var(--color-primary);
+            color: #FFFFFF;
+            text-align: center;
+            animation: fadeUp 0.6s ease forwards;
+            animation-delay: 0.3s;
+        }
+
+        #contact h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            letter-spacing: 0.05em;
+            color: #FFFFFF;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .contact-item {
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+
+        .contact-item a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #FFFFFF;
+        }
+
+        .whatsapp-btn {
+            display: inline-block;
+            padding: 1rem 3rem;
+            background: #25D366;
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            border: 2px solid #25D366;
+        }
+
+        .whatsapp-btn:hover {
+            background: transparent;
+            color: #25D366;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        .whatsapp-float svg {
+            width: 32px;
+            height: 32px;
+            fill: #FFFFFF;
+        }
+
+        footer {
+            background: var(--color-surface);
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.95rem;
+            font-weight: 300;
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 1024px) {
+            #hero h1 {
+                font-size: 3.5rem;
+            }
+
+            .about-split {
+                gap: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav .nav-links {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+
+            section {
+                padding: 48px 1.5rem;
+            }
+
+            #hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 0.1em;
+            }
+
+            #hero .tagline {
+                font-size: 1.2rem;
+            }
+
+            #hero p {
+                font-size: 1rem;
+            }
+
+            .about-split {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-image {
+                height: 400px;
+            }
+
+            .about-content h2,
+            #services h2,
+            #contact h2 {
+                font-size: 2.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-float {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+            }
+
+            .whatsapp-float svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="#hero" class="logo">Real_Anis Empire</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="hero">
+        <img src="https://images.pexels.com/photos/28316342/pexels-photo-28316342.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Real_Anis Empire Fashion Studio" class="hero-image">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Real_Anis Empire</h1>
+            <p class="tagline">Where Style Meets Innovation</p>
+            <p>Welcome to Real_Anis Empire – Bwari's Premier Fashion and Creative Design Studio. We transform your vision into stunning reality through bespoke fashion designs, creative styling, and innovative textile solutions. From couture pieces to everyday elegance, we craft designs that celebrate your unique identity.</p>
+            <a href="#contact" class="cta-button">Get Started</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="section-container">
+            <div class="about-split">
+                <img src="https://images.pexels.com/photos/35689783/pexels-photo-35689783.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="Real_Anis Empire Design Studio" class="about-image">
+                <div class="about-content">
+                    <h2>About Us</h2>
+                    <p>Real_Anis Empire is a leading fashion and creative design venture based in the heart of Bwari, Abuja. We specialize in creating exceptional fashion pieces that blend contemporary trends with timeless Nigerian elegance. Our design studio combines traditional craftsmanship with modern techniques to deliver outstanding results for individuals, brands, and special occasions. Whether you need custom clothing, creative styling services, or innovative design solutions, our experienced team brings passion, precision, and creativity to every project. We believe fashion is more than clothing – it's an expression of who you are.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <div class="section-container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Custom Fashion Design</h3>
+                    <p>Bespoke clothing tailored to your exact measurements and style preferences, from traditional Nigerian attire to contemporary fashion pieces.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Creative Styling</h3>
+                    <p>Professional styling services for photoshoots, events, and personal brand development.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Bridal & Special Occasion Wear</h3>
+                    <p>Exquisite designs for weddings, engagements, and milestone celebrations.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Fashion Consulting</h3>
+                    <p>Expert advice on wardrobe planning, color coordination, and personal style development.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Pattern Making & Alterations</h3>
+                    <p>Precision pattern creation and professional alterations to ensure perfect fit.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Textile Design</h3>
+                    <p>Custom fabric selection and creative textile solutions for unique fashion statements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-container">
+            <h2>Get In Touch</h2>
+            <p>Ready to bring your fashion vision to life? Visit our studio in Bwari or reach out to discuss your next design project. We're here to create something extraordinary together.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>Visit Us:</strong> Millennium Estate, Tundu Fulani, Bwari, Abuja
+                </div>
+                <div class="contact-item">
+                    <strong>Call or WhatsApp:</strong> <a href="tel:+2349064839778">+234 906 483 9778</a>
+                </div>
+            </div>
+            <p>We welcome walk-ins and consultations by appointment. Let's create fashion magic together at Real_Anis Empire – where your style story begins.</p>
+            <br>
+            <a href="https://wa.me/2349064839778" class="whatsapp-btn" target="_blank">Message Us on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Real_Anis Empire. All Rights Reserved.</p>
+    </footer>
+
+    <a href="https://wa.me/2349064839778" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.737 5.607 2.137 8.048l-2.137 7.952 7.933-2.127c2.42 1.37 5.173 2.127 8.067 2.127 8.837 0 16-7.163 16-16s-7.163-16-16-16zM16 29.467c-2.482 0-4.908-0.646-7.07-1.87l-0.507-0.292-5.247 1.409 1.409-5.234-0.321-0.519c-1.307-2.169-2.003-4.649-2.003-7.194 0-7.51 6.11-13.62 13.62-13.62s13.62 6.11 13.62 13.62-6.11 13.62-13.62 13.62zM21.305 19.26c-0.346-0.174-2.049-1.007-2.366-1.123-0.316-0.116-0.547-0.174-0.776 0.174s-0.892 1.123-1.094 1.347c-0.201 0.227-0.402 0.255-0.748 0.081s-1.461-0.539-2.785-1.722c-1.031-0.922-1.727-2.061-1.929-2.407s-0.022-0.535 0.152-0.708c0.156-0.155 0.346-0.402 0.518-0.603s0.231-0.346 0.346-0.576c0.116-0.227 0.058-0.428-0.028-0.603s-0.776-1.87-1.063-2.565c-0.28-0.672-0.56-0.58-0.776-0.591-0.201-0.010-0.431-0.012-0.661-0.012s-0.603 0.086-0.92 0.428c-0.316 0.346-1.206 1.179-1.206 2.873s1.235 3.333 1.406 3.561c0.174 0.231 2.413 3.733 5.866 5.233 0.818 0.354 1.458 0.566 1.956 0.724 0.822 0.262 1.569 0.225 2.16 0.136 0.659-0.098 2.049-0.838 2.335-1.647 0.289-0.808 0.289-1.501 0.201-1.647-0.086-0.144-0.316-0.231-0.661-0.406z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenuBtn.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+            });
+
+            // Close mobile menu when clicking a link
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenuBtn.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        }
+    </script>
+</body>
+</html>
