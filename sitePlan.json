@@ -1,0 +1,42 @@
+{
+  "businessName": "Real_Anis Empire",
+  "industry": "Fashion and Creative Design",
+  "tone": "Creative and Aspirational",
+  "tagline": "Where Style Meets Innovation",
+  "sections": [
+    {
+      "id": "hero",
+      "name": "Hero",
+      "copy": "Welcome to Real_Anis Empire – Bwari's Premier Fashion and Creative Design Studio. We transform your vision into stunning reality through bespoke fashion designs, creative styling, and innovative textile solutions. From couture pieces to everyday elegance, we craft designs that celebrate your unique identity.",
+      "imagePrompt": "A vibrant, sophisticated fashion studio in Nigeria showcasing colorful African print fabrics draped elegantly, modern sewing equipment, fashion sketches on the wall, warm natural lighting streaming through large windows, with rich textures of ankara, lace, and contemporary fabrics in the foreground, professional photography, high-end fashion atmosphere",
+      "layout": "centered"
+    },
+    {
+      "id": "about",
+      "name": "About Us",
+      "copy": "Real_Anis Empire is a leading fashion and creative design venture based in the heart of Bwari, Abuja. We specialize in creating exceptional fashion pieces that blend contemporary trends with timeless Nigerian elegance. Our design studio combines traditional craftsmanship with modern techniques to deliver outstanding results for individuals, brands, and special occasions. Whether you need custom clothing, creative styling services, or innovative design solutions, our experienced team brings passion, precision, and creativity to every project. We believe fashion is more than clothing – it's an expression of who you are.",
+      "imagePrompt": "A modern Nigerian fashion designer's workspace with colorful fabric swatches arranged artistically on a large table, professional dress forms displaying elegant garments, mood boards with fashion inspiration, African-inspired decor elements, bright and airy studio space with plants, natural light, professional and creative atmosphere",
+      "layout": "split"
+    },
+    {
+      "id": "services",
+      "name": "Our Services",
+      "copy": "Custom Fashion Design: Bespoke clothing tailored to your exact measurements and style preferences, from traditional Nigerian attire to contemporary fashion pieces.\n\nCreative Styling: Professional styling services for photoshoots, events, and personal brand development.\n\nBridal & Special Occasion Wear: Exquisite designs for weddings, engagements, and milestone celebrations.\n\nFashion Consulting: Expert advice on wardrobe planning, color coordination, and personal style development.\n\nPattern Making & Alterations: Precision pattern creation and professional alterations to ensure perfect fit.\n\nTextile Design: Custom fabric selection and creative textile solutions for unique fashion statements.",
+      "imagePrompt": "A collage-style composition showing various aspects of fashion design services: a beautiful Nigerian bride in elegant white wedding dress, colorful traditional ankara outfits on mannequins, a stylist arranging clothes, close-up of hands working on fabric with measuring tape and scissors, fashion sketches, all in warm professional studio lighting",
+      "layout": "grid"
+    },
+    {
+      "id": "contact",
+      "name": "Get In Touch",
+      "copy": "Ready to bring your fashion vision to life? Visit our studio in Bwari or reach out to discuss your next design project. We're here to create something extraordinary together.\n\nVisit Us: Millennium Estate, Tundu Fulani, Bwari, Abuja\n\nCall or WhatsApp: +234 906 483 9778\n\nWe welcome walk-ins and consultations by appointment. Let's create fashion magic together at Real_Anis Empire – where your style story begins.",
+      "imagePrompt": "A welcoming Nigerian fashion boutique entrance with 'Real_Anis Empire' signage, beautiful storefront with elegant window display showing colorful garments, warm interior lighting visible through glass doors, modern Abuja neighborhood setting, inviting and professional atmosphere, golden hour lighting",
+      "layout": "centered"
+    }
+  ],
+  "contact": {
+    "phone": "+234 906 483 9778",
+    "email": "",
+    "address": "Millennium Estate, Tundu Fulani, Bwari, Abuja",
+    "whatsapp": "https://wa.me/2349064839778"
+  }
+}
